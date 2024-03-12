@@ -11685,7 +11685,7 @@ def generate_wordlist(adjectives, nouns, filename='wordlist.txt', total_entries=
                     file.write(entry)
                     generated_count += 1
                     if generated_count % 1000000 == 0:
-                        print(f"Generated {generated_count} entries so far.")
+                        print(f"Generated {generated_count} passwords so far.")
 
         print(f"Finished generating {generated_count} entries.")
 
