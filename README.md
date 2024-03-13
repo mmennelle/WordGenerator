@@ -1,6 +1,6 @@
 Generate passwords using an extensive list of adjectives and nouns. The arguments below allow for customization.
 
-DEFAULT: ~3.4 Billion strings. All lowercase consisting of an adjective,noun, and two digits 
+DEFAULT: ~3.4 Billion strings. All lowercase consisting of an adjective, noun, and two digits 
 EXAMPLE: "actualglove45"
 
 CLI arguments:
