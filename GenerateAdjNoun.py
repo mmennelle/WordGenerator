@@ -885,7 +885,7 @@ nouns = ['ATM', 'CD', 'SUV', 'TV', 'aardvark', 'abacus', 'abbey', 'abbreviation'
 'motivation', 'motive', 'motor', 'motorboat', 'motorcar', 'motorcycle', 'mound', 'mountain', 'mouse', 'mouser',
 'mousse', 'moustache', 'mouth', 'mouton', 'movement', 'mover', 'movie', 'mower', 'mozzarella', 'mud',
 'muffin', 'mug', 'mukluk', 'mule', 'multimedia', 'murder', 'muscat', 'muscatel', 'muscle', 'musculature',
-'museum', 'mushroom', 'music', 'music-box', 'music-making', 'musician', 'muskrat', 'mussel', 'mustache', 'mustard',
+'museum', 'mushroom', 'music', 'music-box', 'music-making', 'musician', 'musk', 'muskrat', 'mussel', 'mustache', 'mustard',
 'mutation', 'mutt', 'mutton', 'mycoplasma', 'mystery', 'myth', 'mythology', 'nail', 'name', 'naming',
 'nanoparticle', 'napkin', 'narrative', 'nasal', 'nation', 'nationality', 'native', 'naturalisation', 'nature', 'navigation',
 'necessity', 'neck', 'necklace', 'necktie', 'nectar', 'nectarine', 'need', 'needle', 'neglect', 'negligee',
@@ -1171,11 +1171,13 @@ nouns = ['ATM', 'CD', 'SUV', 'TV', 'aardvark', 'abacus', 'abbey', 'abbreviation'
 'zucchini']
 
 # Function to generate the wordlist
-def generate_wordlist(adjectives, nouns, filename='wordlist.txt', total_entries=90000000000):
+def generate_wordlist(adjectives, nouns, filename='wordlist.txt', total_entries=9000000000):
     with open(filename, 'w') as file:
         generated_count = 0
         for adj in adjectives:
             for noun in nouns:
+                if len(adj) + len(noun) > 10:
+                    continue
                 for i in range(100):  # Generates numbers from 00 to 99
                     if generated_count >= total_entries:
                         print(f" {total_entries} passwords created.")
@@ -1190,4 +1192,4 @@ def generate_wordlist(adjectives, nouns, filename='wordlist.txt', total_entries=
         print(f"Finished generating {generated_count} entries.")
 
 # Call the function with your lists of adjectives and nouns.
-generate_wordlist(adjectives, nouns, 'wordlist.txt', 90000000000)
+generate_wordlist(adjectives, nouns, 'wordlist.txt', 9000000000)
