@@ -1,6 +1,6 @@
 import random
 
-# Example lists of adjectives and nouns. You should expand these lists to ensure diversity and uniqueness.
+# pretty long lists of adjectives and nouns.4800 adjectives and 6700 nouns
 adjectives = ['a', 'abandoned', 'abdominal', 'abhorrent', 'abiding', 'abject', 'able', 'able-bodied', 'abnormal', 'abounding',
 'abrasive', 'abrupt', 'absent', 'absentminded', 'absolute', 'absorbed', 'absorbing', 'abstracted', 'absurd', 'abundant',
 'abusive', 'abysmal', 'academic', 'acceptable', 'accepting', 'accessible', 'accidental', 'acclaimed', 'accommodating', 'accompanying',
