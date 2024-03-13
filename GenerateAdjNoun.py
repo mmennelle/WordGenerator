@@ -1175,15 +1175,20 @@ def generate_wordlist(adjectives, nouns, filename='wordlist.txt', total_entries=
     with open(filename, 'w') as file:
         generated_count = 0
         for adj in adjectives:
+            capitalized_adjective = adj.capitalize()  # Capitalize the adjective. Comment out to remove case
             for noun in nouns:
-                if len(adj) + len(noun) > 10:
+                capitalized_noun = noun.capitalize()  # Capitalize the noun
+               # if len(adj) + len(noun) > 10: #uncomment if case dosent matter.
+                  #  continue
+                if len(capitalized_adjective) + len(capitalized_noun) > 10:
                     continue
                 for i in range(100):  # Generates numbers from 00 to 99
                     if generated_count >= total_entries:
                         print(f" {total_entries} passwords created.")
                         return
                     digits = f"{i:02d}"
-                    entry = f"{adj}{noun}{digits}\n"
+                    #entry = f"{adj}{noun}{digits}\n"                               #uncomment one of these depending on case choice
+                    entry = f"{capitalized_adjective}{capitalized_noun}{digits}\n"
                     file.write(entry)
                     generated_count += 1
                     if generated_count % 1000000 == 0:

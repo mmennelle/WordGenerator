@@ -1179,7 +1179,7 @@ def generate_wordlist_with_symbols(adjectives, nouns, filename='wordlistSymbol.t
             for noun in nouns:
                 capitalized_noun = noun.capitalize()  # Capitalize the noun
                 # Check the combined length before adding digits
-                if len(adj) + len(capitalized_noun) > 12:
+                if len(adj) + len(capitalized_noun) > 12: #comment this out if you dont want a limit
                     continue  # Skip this combination if it exceeds 12 characters
 
                 for i in range(100):  # Generates numbers from 00 to 99
