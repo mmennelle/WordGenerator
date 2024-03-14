@@ -1,5 +1,5 @@
-input_file_path = 'converted_output_file.txt'
-output_file_path = 'condensed_noun.txt'
+input_file_path = 'converted_verbs.txt'
+output_file_path = 'condensed_verbs.txt'
 
 # Read the input file
 with open(input_file_path, 'r') as file:
