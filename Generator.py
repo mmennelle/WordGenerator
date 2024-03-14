@@ -3,11 +3,11 @@ import argparse
 from LotsOfWords import adjectives, nouns, verbs
 
 
-# Function to generate the wordlist
+# generate a wordlist
 def generate_wordlist(adjectives, nouns, verbs, adjective, noun, verb, filename, total_passwords, capitalize_adjective,
                       capitalize_noun,
                       capitalize_verb, max_length):
-    # Validate combination before generating passwords
+    # CLI arg validation.
     if not ((adjective and noun) or (adjective and verb) or (verb and noun)):
         print("\nProvide a combination please.. Type python Generator.py -h for more info.\n")
         exit(1)
@@ -23,7 +23,7 @@ def generate_wordlist(adjectives, nouns, verbs, adjective, noun, verb, filename,
                 for ver in verbs:
                     if capitalize_verb:
                         ver = ver.capitalize()
-                    # Check length and adjust logic to avoid unnecessary combinations
+                    # Length is adjusted using a CLI arg
                     if adjective and noun and (len(adj) + len(noun) <= max_length):
                         for i in range(100):
                             if generated_count >= total_passwords:
@@ -55,7 +55,7 @@ def generate_wordlist(adjectives, nouns, verbs, adjective, noun, verb, filename,
         print(f"Finished generating {generated_count} passwords.")
 
 
-# Setup argparse
+
 parser = argparse.ArgumentParser(description='Generate a wordlist.')
 parser.add_argument('--filename', type=str, default='wordlist.txt', help='Output filename')
 parser.add_argument('--total_passwords', type=int, default=9000000000, help='Maximum number of entries to generate')
@@ -67,10 +67,10 @@ parser.add_argument('--noun', action='store_true', help='Include noun')
 parser.add_argument('--verb', action='store_true', help='Include verb')
 parser.add_argument('--max_length', type=int, default=100, help='Maximum length of combinations before adding digits')
 
-# Parse arguments
+
 args = parser.parse_args()
 
-# Call the function with the parsed arguments
+
 generate_wordlist(adjectives, nouns, verbs, args.adjective, args.noun, args.verb, args.filename, args.total_passwords,
                   args.capitalize_adjective,
                   args.capitalize_noun, args.capitalize_verb, args.max_length)
