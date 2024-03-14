@@ -26,26 +26,26 @@ def generate_wordlist(adjectives, nouns, verbs, include_adjective, include_noun,
                             return
 
                         digits = f"{i:02d}"
-                        entry = ""
+                        password = ""
 
                         if include_adjective and include_noun or reverse and not include_verb:
                             if len(adj_c) + len(n_c) <= max_length:
-                                entry = f"{adj_c}{n_c}{digits}\n"
-                                if(reverse):
-                                    entry = f"{n_c}{adj_c}{digits}\n"
+                                password = f"{adj_c}{n_c}{digits}\n"
+                                if reverse:
+                                    password = f"{n_c}{adj_c}{digits}\n"
                         elif include_verb and include_noun or reverse and not include_adjective:
                             if len(v_c) + len(n_c) <= max_length:
-                                entry = f"{v_c}{n_c}{digits}\n"
-                                if (reverse):
-                                    entry = f"{n_c}{v_c}{digits}\n"
+                                password = f"{v_c}{n_c}{digits}\n"
+                                if reverse:
+                                    password = f"{n_c}{v_c}{digits}\n"
                         elif include_adjective and include_verb or reverse and not include_noun:
                             if len(adj_c) + len(v_c) <= max_length:
-                                entry = f"{adj_c}{v_c}{digits}\n"
-                                if (reverse):
-                                    entry = f"{v_c}{adj_c}{digits}\n"
+                                password = f"{adj_c}{v_c}{digits}\n"
+                                if reverse:
+                                    password = f"{v_c}{adj_c}{digits}\n"
 
-                        if entry:
-                            file.write(entry)
+                        if password:
+                            file.write(password)
                             generated_count += 1
 
                         if generated_count % 1000000 == 0:
