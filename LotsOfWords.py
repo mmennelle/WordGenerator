@@ -1168,7 +1168,7 @@ nouns = ['ATM', 'CD', 'SUV', 'TV', 'aardvark', 'abacus', 'abbey', 'abbreviation'
 'ziggurat', 'zinc', 'zipper', 'zither', 'zombie', 'zone', 'zoo', 'zoologist', 'zoology', 'zoot-suit',
 'zucchini']
 
-verb = ['abandon', 'abate', 'abbreviate', 'abdicate', 'abduct', 'abhor', 'abide', 'abolish', 'abort', 'abound',
+verbs = ['abandon', 'abate', 'abbreviate', 'abdicate', 'abduct', 'abhor', 'abide', 'abolish', 'abort', 'abound',
 'abridge', 'abscond', 'absolve', 'absorb', 'abstain', 'abstract', 'abuse', 'accelerate', 'accent', 'accentuate',
 'accept', 'access', 'accessorize', 'acclaim', 'acclimate', 'acclimatize', 'accommodate', 'accompany', 'accomplish', 'accord',
 'accost', 'account', 'accredit', 'accrue', 'acculturate', 'accumulate', 'accuse', 'accustom', 'acerbate', 'ache',
