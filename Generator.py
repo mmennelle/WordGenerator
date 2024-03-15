@@ -6,9 +6,9 @@ def generate_random_wordlist(filename, total_passwords, max_length):
         generated_count = 0
         while generated_count < total_passwords:
             word_list = random.sample([adjectives, nouns, verbs], 2)  # Randomly select two lists
-            word1 = random.choice(word_list[0]).capitalize()
-            word2 = random.choice(word_list[1]).capitalize()
-            number = str(random.randint(0, 999)).zfill(3)  # Generates numbers from 000 to 999
+            word1 = random.choice(word_list[0])#.capitalize()
+            word2 = random.choice(word_list[1])#.capitalize()
+            number = str(random.randint(0, 99)).zfill(2)  # Generates numbers from 000 to 999
             entry = f"{word1}{word2}{number}\n"
             if len(entry) <= max_length + 4:  # Account for the newline character and three digits
                 file.write(entry)
