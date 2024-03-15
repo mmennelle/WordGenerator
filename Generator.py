@@ -112,7 +112,8 @@ parser.add_argument('-N', '--capitalize_noun', action='store_true', help='Capita
 parser.add_argument('-V', '--capitalize_verb', action='store_true', help='Capitalize the first letter of verbs')
 parser.add_argument('-ml', '--max_length', type=int, default=100, help='Maximum length of password before adding digits')
 parser.add_argument('-r', '--reversible', action='store_true', help='Generate reversed pairs only')
-parser.add_argument('-ra', '--random', action='store_true', help='Randomly select words and generate passwords')
+parser.add_argument('-ra', '--random', action='store_true', help='Randomly select words and generate passwords.\nNOTE: If you dont set a max length '
+                                                                 'it will generate 109,785,000,000 combinations.')
 
 args = parser.parse_args()
 
