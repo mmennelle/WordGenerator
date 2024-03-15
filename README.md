@@ -8,6 +8,9 @@ CLI arguments:
 Generate a wordlist.
 
 options:
+ enerate a wordlist.
+
+options:
   -h, --help            show this help message and exit
   
   -f FILENAME, --filename FILENAME
@@ -31,10 +34,12 @@ options:
   -V, --capitalize_verb
                         Capitalize the first letter of verbs
                         
-  -r, --reverse         Reverse order.
-                         Default orders are adj/noun, verb/noun adj/verb
-  
   -ml MAX_LENGTH, --max_length MAX_LENGTH
-                        Maximum length of combinations before adding digits
+                        Maximum length of password before adding digits
+                        
+  -r, --reversible      Generate reversed pairs only
+  
+  -ra, --random         Randomly select words and generate passwords. 
+  NOTE: If you don't set a max length it will generate 109,785,000,000 combinations.
 
 
