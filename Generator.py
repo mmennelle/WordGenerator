@@ -38,6 +38,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                                     if generated_count % 1000000 == 0:
                                         print(f"Generated {generated_count} passwords so far.")
                                     if generated_count >= total_passwords:
+                                        print(f"{total_passwords} passwords created.")
                                         return
 
                 case (True, False, True, False):
@@ -54,6 +55,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                                     if generated_count % 1000000 == 0:
                                         print(f"Generated {generated_count} passwords so far.")
                                     if generated_count >= total_passwords:
+                                        print(f"{total_passwords} passwords created.")
                                         return
 
                 case (True, True, _, True) | (False, True, True, True) | (True, False, True, True):
