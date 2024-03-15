@@ -1,5 +1,21 @@
 import argparse
+import random
 from LotsOfWords import adjectives, nouns, verbs
+def generate_random_wordlist(filename, total_passwords, max_length):
+    with open(filename, 'w') as file:
+        generated_count = 0
+        while generated_count < total_passwords:
+            word_list = random.sample([adjectives, nouns, verbs], 2)  # Randomly select two lists
+            word1 = random.choice(word_list[0]).capitalize()
+            word2 = random.choice(word_list[1]).capitalize()
+            number = str(random.randint(0, 999)).zfill(3)  # Generates numbers from 000 to 999
+            entry = f"{word1}{word2}{number}\n"
+            if len(entry) <= max_length + 4:  # Account for the newline character and three digits
+                file.write(entry)
+                generated_count += 1
+            if generated_count % 1000000 == 0:
+                print(f"Generated {generated_count} passwords so far.")
+    print(f"Finished generating {generated_count} random passwords.")
 
 def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwords, capitalize_adjective, capitalize_noun, capitalize_verb, max_length):
     with open(filename, 'w') as file:
@@ -96,8 +112,12 @@ parser.add_argument('-N', '--capitalize_noun', action='store_true', help='Capita
 parser.add_argument('-V', '--capitalize_verb', action='store_true', help='Capitalize the first letter of verbs')
 parser.add_argument('-ml', '--max_length', type=int, default=100, help='Maximum length of password before adding digits')
 parser.add_argument('-r', '--reversible', action='store_true', help='Generate reversed pairs only')
+parser.add_argument('-ra', '--random', action='store_true', help='Randomly select words and generate passwords')
 
 args = parser.parse_args()
 
-generate_wordlist(args.adjective, args.noun, args.verb, args.reversible, args.filename, args.total_passwords,
-                  args.capitalize_adjective, args.capitalize_noun, args.capitalize_verb, args.max_length)
+if args.random:
+    generate_random_wordlist(args.filename, args.total_passwords, args.max_length)
+else:
+    generate_wordlist(args.adjective, args.noun, args.verb, args.reversible, args.filename, args.total_passwords,
+                      args.capitalize_adjective, args.capitalize_noun, args.capitalize_verb, args.max_length)
