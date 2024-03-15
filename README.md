@@ -1,8 +1,5 @@
 Generate passwords using extensive lists of adjectives, nouns, and verbs. The arguments below allow for customization.
 
-DEFAULT: ~3.4 Billion strings. All lowercase consisting of an adjective, noun, and two digits 
-EXAMPLE: "actualglove45"
-
 CLI arguments:
 
 Generate a wordlist.
@@ -40,6 +37,6 @@ options:
   -r, --reversible      Generate reversed pairs only
   
   -ra, --random         Randomly select words and generate passwords. 
-  NOTE: If you don't set a max length it will generate 109,785,000,000 combinations.
+  NOTE: If you don't set a max length  with random, it will generate 109,785,000,000 combinations.
 
 
