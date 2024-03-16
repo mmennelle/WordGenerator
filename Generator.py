@@ -6,16 +6,19 @@ def generate_random_wordlist(filename, total_passwords, max_length):
         generated_count = 0
         while generated_count < total_passwords:
             word_list = random.sample([adjectives, nouns, verbs], 2)  # Randomly select two lists
-            word1 = random.choice(word_list[0])#.capitalize()
+            word1 = random.choice(word_list[0]) #.capitalize()
             word2 = random.choice(word_list[1])#.capitalize()
-            number = str(random.randint(0, 99)).zfill(2)  # Generates numbers from 000 to 999
-            entry = f"{word1}{word2}{number}\n"
-            if len(entry) <= max_length + 4:  # Account for the newline character and three digits
-                file.write(entry)
-                generated_count += 1
-            if generated_count % 1000000 == 0:
-                print(f"Generated {generated_count} passwords so far.")
-    print(f"Finished generating {generated_count} random passwords.")
+            for i in range(100):  # Digits iteration
+                digits = f"{i:02d}"
+                entry = f"{word1}{word2}{digits}\n"
+                if len(entry) <= max_length:
+                    file.write(entry)
+                    generated_count += 1
+                    if generated_count % 1000000 == 0:
+                        print(f"Generated {generated_count} passwords so far.")
+                    if generated_count >= total_passwords:
+                        print(f"{total_passwords} passwords created.")
+                        return
 
 def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwords, capitalize_adjective, capitalize_noun, capitalize_verb, max_length):
     with open(filename, 'w') as file:
