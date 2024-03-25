@@ -26,7 +26,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
 
             # Using match-case structure
             match (adjective, noun, verb, reversible):
-                case (True, True, _, False):
+                case (True, True, False, False):
                     for adj in adjectives:
                         adj_formatted = adj.capitalize() if capitalize_adjective else adj
                         for noun in nouns:
@@ -42,7 +42,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                                     if generated_count >= total_passwords:
                                         print(f"{total_passwords} passwords created.")
                                         return
-
+            #match (adjective, noun, verb, reversible):
                 case (False, True, True, False):
                     for verb in verbs:
                         ver_formatted = verb.capitalize() if capitalize_verb else verb
@@ -59,7 +59,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                                     if generated_count >= total_passwords:
                                         print(f"{total_passwords} passwords created.")
                                         return
-
+              #match (adjective, noun, verb, reversible):
                 case (True, False, True, False):
                     for adj in adjectives:
                         adj_formatted = adj.capitalize() if capitalize_adjective else adj
@@ -76,8 +76,8 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                                     if generated_count >= total_passwords:
                                         print(f"{total_passwords} passwords created.")
                                         return
-
-                case (True, True, _, True) | (False, True, True, True) | (True, False, True, True):
+            #match (adjective, noun, verb, reversible):
+                case (True, True, False, True) | (False, True, True, True) | (True, False, True, True):
                     # Only executed if reversible is True
                     pairs = []
                     if adjective and noun:
@@ -92,7 +92,7 @@ def generate_wordlist(adjective, noun, verb, reversible, filename, total_passwor
                         word2 = pair[1].capitalize() if capitalize_noun else pair[1]
                         for i in range(100):  # Digits iteration
                             digits = f"{i:02d}"
-                            entry = f"{word2}{word1}{digits}\n"  # Note the reversal here
+                            entry = f"{word2}{word1}{digits}\n"
                             if len(entry) <= max_length:
                                 file.write(entry)
                                 generated_count += 1
