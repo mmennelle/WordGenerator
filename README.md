@@ -53,7 +53,7 @@ python Generator.py -a -n -f adjective_noun_passwords.txt
 
 ### Generate capitalized verb + noun combinations with symbols
 ```bash
-python Generator.py -v -n -V -N -s -f verb_noun_passwords.txt
+python Generator.py -vV -nN -s -f verb_noun_passwords.txt
 ```
 
 ### Generate random combinations with custom symbols
